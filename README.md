@@ -19,6 +19,9 @@ You get the number of files found - and the fsFiles size - from `#define FS_FILE
 ```
 ./fs2ch [Input PATH - Optional] [Output filename - Optional]
 ```
+```
+./fs2ch 
+```
 
 **fs2ch** searches files in current directory and creates the file **out.h** if run without  arguments
 
