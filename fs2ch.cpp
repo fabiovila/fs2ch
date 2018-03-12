@@ -139,7 +139,7 @@ int main(int argc, char *argv[])
 	 }
 	 
 	 
-	 out << "\n\nconst volatile stFile __attribute__ ((section (\".rodata\"))) fsFiles[" << Files.size() <<"] = { "; 
+	 out << "\n\nconst volatile stFile fsFiles[" << Files.size() <<"] = { "; 
 	 
 
 	 for (std::vector<stFile>::iterator i = Files.begin(); i != Files.end(); ++i){
