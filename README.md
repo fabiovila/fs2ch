@@ -1,19 +1,19 @@
-# Easy embed file systems in C/C++ applications
+# Easily embed existing filesystem in C/C++ applications
 
-Recursively search for files in the current or specified path and creates a C Include file with the struct
+Recursively search for files in current or specified path and creates a C Include file with array of follow struct:
 
 ```
 struct {
-  const char *name; 
-  const char *mime; 
-  int size; 
-  const unsigned char *data;
+  const char *name;             // Name of file
+  const char *mime;             // Mime Type
+  int size;                     // Size
+  const unsigned char *data;    // file content
  };
 ```
 
 This struct is defined as `const volatile stFile __attribute__ ((section (".rodata"))) fsFiles[];`
 
-You get the number of files found - and the fsFiles size - from `#define FS_FILES	X`
+You get the number of files found ( and the fsFiles size ) from `#define FS_FILES	X`
 
 ## Usage:
 ```
@@ -23,7 +23,7 @@ You get the number of files found - and the fsFiles size - from `#define FS_FILE
 ./fs2ch 
 ```
 
-**fs2ch** searches files in current directory and creates the file **out.h** if run without  arguments
+**fs2ch** searches for files in current directory and creates **out.h** if run without  arguments
 
 ## Install
 Just do `make` 
