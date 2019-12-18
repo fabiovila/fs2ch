@@ -1,6 +1,6 @@
 # Easily embed existing filesystem in C/C++ applications
 
-Recursively search for files in current or specified path and creates a C Include file with array of follow struct:
+Search for files in current or specified path and creates a C Include file with array of follow struct:
 
 ```
 struct stFile {
@@ -14,7 +14,7 @@ struct stFile {
 All found files are stored at array `const volatile stFile __attribute__ ((section (".rodata"))) fsFiles[];` in **out.h**.
 Just include **out.h** in your application and search for they in `fsFiles[i].name`. Found it, the content and size are in `fsFiles[i].size` and `fsFiles[i].data`.
 
-You get the number of files found ( and the fsFiles size ) from `#define FS_FILES	X`
+The number of files found is set in `#define FS_FILES	X`
 
 
 ## Usage:
